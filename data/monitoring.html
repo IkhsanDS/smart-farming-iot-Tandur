@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Kualitas Air</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            font-size: 1.8rem;
+        }
+        .data {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .data div {
+            margin: 10px 0;
+        }
+        .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .label {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Responsif untuk layar lebih kecil */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .value {
+                font-size: 1.5rem;
+            }
+            .label {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Responsif untuk layar sangat kecil */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.2rem;
+            }
+            .value {
+                font-size: 1.2rem;
+            }
+            .label {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Monitoring Kualitas Air</h1>
+        <div class="data">
+            <div>
+                <span class="label">Suhu:</span>
+                <span id="suhu" class="value">--</span> °C
+            </div>
+            <div>
+                <span class="label">TDS:</span>
+                <span id="tds" class="value">--</span> ppm
+            </div>
+            <div>
+                <span class="label">pH:</span>
+                <span id="ph" class="value">--</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        setInterval(() => {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('suhu').innerText = data.suhu;
+                    document.getElementById('tds').innerText = data.tds;
+                    document.getElementById('ph').innerText = data.ph;
+                })
+                .catch(error => console.error('Error:', error));
+        }, 1000);
+    </script>
+</body>
+</html>
