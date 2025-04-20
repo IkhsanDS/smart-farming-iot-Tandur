@@ -27,9 +27,9 @@ Tampilan aplikasi Kodular
 # 🔧 Hardware & Komponen
 ESP32
 
-Sensor DHT11
+Sensor DHT22
 
-Sensor Soil Moisture (analog)
+Sensor Soil Moisture capasitive
 
 Breadboard, kabel jumper
 
