@@ -17,12 +17,18 @@ Proyek ini adalah sistem monitoring kelembapan tanah, suhu, dan kelembapan udara
 
 🌿 Rekomendasi tanaman otomatis berdasarkan kondisi kelembapan tanah
 
-# 📷 Screenshot
-Foto alat jadi
+# 📷 Gambar
 
-Tampilan Firebase
+📸 **Tampilan firebase**
 
-Tampilan aplikasi Kodular
+![firebase](https://github.com/IkhsanDS/smart-farming-iot-Tandur/blob/main/images/apps4.png)
+
+📸 **Tampilan aplikasi Kodular**
+<p align="left">
+  <img src="images/apps1.jpg" width="200"/>
+  <img src="images/apps2.jpg" width="200"/>
+  <img src="images/apps3.jpg" width="200"/>
+</p>
 
 # 🔧 Hardware & Komponen
 ESP32
